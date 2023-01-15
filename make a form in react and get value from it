@@ -1,0 +1,40 @@
+import {useState} from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import User from './User';
+
+function App() {
+  const [name,setName]=useState("");
+  const [tmc,setTmc]=useState(false);
+  const [st,setSt]=useState("");
+ function getFormData(e)
+ {
+  console.warn(name,tmc,st);
+  e.preventDefault(false);
+ }
+  
+ 
+  return (
+    <div className="App">
+      <h1>my form is</h1>
+     <form onSubmit={getFormData}>
+        <input type="text" onChange={(e)=>setName(e.target.value)}></input><br/><br/>
+        <select onChange={(e)=>setSt(e.target.value)}>
+          <option>select state</option>
+          <option>india</option>
+          <option>pakistan</option>
+          <option>bhutan</option>
+          <option>bangladesh</option>
+        </select>
+        <br/><br/>
+       <input type="checkbox" onChange={(e)=>setTmc(e.target.checked)}/>term and condition
+       <br/><br/>
+       <button type="button">click Here</button>
+       </form>
+     
+    </div>
+  );
+}
+
+export default App;
