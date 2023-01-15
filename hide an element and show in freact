@@ -1,0 +1,25 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import User from './User';
+
+function App() {
+  const [status,setStatus]=React.useState(false)
+  
+ 
+  return (
+    <div className="App">
+      {
+        status?
+        <h1>hello</h1>
+        :null
+      }
+     <button onclick={()=>setStatus(false)}>hide</button>
+     <button onclick={()=>setStatus(true)}>show</button>
+     
+    </div>
+  );
+}
+
+export default App;
