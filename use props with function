@@ -1,0 +1,32 @@
+user.js class-->
+
+
+function User(props)
+{
+  return (
+  <div>
+    <h1>{props.name}</h1>
+    <h1>{props.id}</h1>
+    <h1>{props.section}</h1>
+  </div>
+          );
+}
+export default User;
+
+App.js---->
+
+import logo from './logo.svg';
+import './App.css';
+
+import User from './User';
+function App() {
+ 
+  return (
+    <div className="App">
+      <h1>hello world, i am prashun thakur</h1>
+      <User name={"ANIL"} id={16} section={'b'}/>
+    </div>
+  );
+}
+
+export default App;
