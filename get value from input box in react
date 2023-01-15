@@ -1,0 +1,30 @@
+import React,{useState} from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import User from './User';
+
+function App() {
+  const [data,setData]=useState(null);
+  const [print,setPrint]=useState(false);
+ function getValue(val)
+ {
+setData(val.target.value);
+setPrint(false);
+ }
+  return (
+    <div className="App">
+      {
+        print?
+        <h1>{data}</h1>
+        :null
+      }
+      <h1>we are going to create an input box throug functional Component</h1>
+      
+     <h2>Enter value<input type="text" onChange={getValue}></input></h2>
+     <button type="button" onClick={()=>setPrint(true)}>click here for print</button>
+    </div>
+  );
+}
+
+export default App;
