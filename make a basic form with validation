@@ -1,0 +1,60 @@
+import React, { useState } from "react";
+function Login() {
+    const [userId,setuserId]=useState(null);
+    const [password,setuserPassword]=useState(null);
+    const [IdError,setIdError]=useState(false);
+    const [passError,setPassError]=useState(false);
+function reload(e)
+{
+e.preventDefault();
+if(userId.length<3 || password.length<3)
+{
+    alert("invalid id and password");
+}
+else
+{
+    alert("all correct");
+}
+}
+function fun(e)
+{
+    let item=e.target.value;
+if(item.length<3 || item.length>8)
+{
+setIdError(true);
+}
+else{
+    setIdError(false);
+  
+}
+setuserId(item);
+}
+function fun2(e)
+{
+let item=e.target.value;
+if(item.length<5)
+{
+setPassError(true);
+
+}
+else
+{
+setPassError(false);
+
+}
+setuserPassword(item);
+}
+
+    return (
+        <div>
+            <h1>basic html validation form</h1>
+            <form onSubmit={reload}>
+           <h1>ID</h1> <input type="text" placeholder="enter id" onChange={fun} />{IdError?<span>invalid data</span>:""} 
+            <h1>Password</h1><input type="password" placeholder="enter password" onChange={fun2} />{passError?<span>invalid password</span>:""}
+            <button type="submit" >click here</button>
+            </form>
+        </div>
+    );
+
+}
+export default Login;
